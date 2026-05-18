@@ -36,24 +36,29 @@ const RECOMMENDED_MODELS = [
   { name: 'OTHER STRONG STARTERS', desc: 'Flux.2 variants, Z Image Turbo, Juggernaut Ragnarok / Z-Image, Fluxxxed Up fine-tunes, Pony Diffusion models.' },
 ];
 
-function QuickStartGuide() {
-  const [open, setOpen] = useState(false);
-
+function QuickStartModal({ onClose }: { onClose: () => void }) {
   return (
-    <div className="border border-[#333] bg-[#0a0a0a] rounded-none mt-8">
-      <button
-        onClick={() => setOpen(o => !o)}
-        className="w-full flex items-center justify-between p-6 font-mono text-left group"
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={onClose}>
+      <div className="absolute inset-0 bg-black/80" />
+      <div
+        className="relative z-10 w-full max-w-2xl max-h-[85vh] overflow-y-auto border border-[#333] bg-[#0a0a0a] font-mono text-[13px]"
+        onClick={e => e.stopPropagation()}
       >
-        <div>
-          <div className="text-[10px] text-[#ff6b35] tracking-[0.2em] uppercase mb-1">QUICK START GUIDE</div>
-          <div className="text-white font-bold uppercase tracking-tight text-sm">Draw Things on iOS — Unlimited Free Generation</div>
+        {/* Modal header */}
+        <div className="sticky top-0 bg-[#0a0a0a] border-b border-[#333] p-4 flex items-center justify-between z-10">
+          <div>
+            <div className="text-[10px] text-[#00FF00] tracking-[0.2em] uppercase mb-1">QUICK START GUIDE</div>
+            <div className="text-white font-bold uppercase tracking-tight text-sm">Draw Things on iOS — Unlimited Free Generation</div>
+          </div>
+          <button
+            onClick={onClose}
+            className="text-[#888] hover:text-white border border-[#333] hover:border-[#ff6b35] px-3 py-2 text-[10px] tracking-widest uppercase ml-4 flex-shrink-0"
+          >
+            [ CLOSE ]
+          </button>
         </div>
-        <span className="text-[#ff6b35] text-xl font-bold ml-4">{open ? '−' : '+'}</span>
-      </button>
 
-      {open && (
-        <div className="border-t border-[#333] p-6 flex flex-col gap-8 font-mono text-[13px]">
+        <div className="p-6 flex flex-col gap-8">
 
           {/* Steps */}
           <div>
@@ -99,7 +104,7 @@ function QuickStartGuide() {
           {/* How to find models */}
           <div>
             <h3 className="text-[10px] text-[#888] tracking-widest uppercase border-b border-[#333] pb-2 mb-4">HOW TO FIND & ADD MODELS / LORAS</h3>
-            <p className="text-[#999] leading-relaxed">Use the built-in Civitai browser in Draw Things (search directly in the app) or visit <span className="text-white">Civitai.com</span> / <span className="text-white">Civitai.red</span> in Safari. Download models/LoRAs → import into Draw Things (the app handles this smoothly via links or files).</p>
+            <p className="text-[#999] leading-relaxed">Use the built-in Civitai browser in Draw Things (search directly in the app) or visit <span className="text-white">Civitai.com</span> / <span className="text-white">Civitai.red</span> in Safari. Download models/LoRAs → import into Draw Things.</p>
           </div>
 
           {/* Recommended models */}
@@ -140,7 +145,7 @@ function QuickStartGuide() {
           </div>
 
         </div>
-      )}
+      </div>
     </div>
   );
 }
@@ -162,10 +167,12 @@ const VIDEO_MODULES: VideoModule[] = [
 ];
 
 export default function SecurePayloadDelivery() {
+  const [quickStartOpen, setQuickStartOpen] = useState(false);
   return (
     <div className="min-h-screen bg-[#000000] text-[#e0e0e0] font-sans">
       <NavHeader label="DEPLOYMENT PAYLOAD" />
       <div className="p-4 md:p-12">
+      {quickStartOpen && <QuickStartModal onClose={() => setQuickStartOpen(false)} />}
       <div className="max-w-6xl mx-auto">
 
         {/* HEADER */}
@@ -194,6 +201,13 @@ export default function SecurePayloadDelivery() {
                 CORE DOCUMENTATION
               </h2>
               <div className="flex flex-col gap-3 font-mono text-[13px]">
+                <button onClick={() => setQuickStartOpen(true)} className="group w-full text-[#00FF00] border border-[#00FF00]/40 hover:border-[#00FF00] hover:bg-[#00FF00]/10 p-2 -mx-2 transition-none flex justify-between items-center font-mono text-[13px]">
+                  <span className="flex items-center gap-2">
+                    <span className="text-[10px] opacity-60">↗</span>
+                    QUICK_START_GUIDE.TXT
+                  </span>
+                  <span className="text-[#00FF00] text-[10px]">ONLINE</span>
+                </button>
                 <a href="/downloads/OMNIBUS-FINAL-cece.pdf" target="_blank" rel="noopener noreferrer" className="group text-[#ff6b35] border border-[#ff6b35]/40 hover:border-[#ff6b35] hover:bg-[#ff6b35]/10 p-2 -mx-2 transition-none flex justify-between items-center">
                   <span className="flex items-center gap-2">
                     <span className="text-[10px] opacity-60">↓</span>
@@ -308,7 +322,6 @@ export default function SecurePayloadDelivery() {
 
         </div>
 
-        <QuickStartGuide />
 
       </div>
       </div>
