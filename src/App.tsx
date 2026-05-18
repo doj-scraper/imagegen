@@ -1,6 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Terminal } from 'lucide-react';
+import ModelShowcase from './TelemetryFeatureCycler';
 
 const FADE_UP = {
   initial: { opacity: 0, y: 20 },
@@ -16,24 +18,23 @@ const STAGGER = {
   }
 };
 
-const DeployButton: React.FC<{ label?: string; price?: string; href?: string }> = ({
+const DeployButton: React.FC<{ label?: string; price?: string }> = ({
   label = "INITIALIZE DEPLOYMENT",
   price = "$15",
-  href = "#checkout"
 }) => {
   return (
-    <a 
-      href={href}
-      className="group relative inline-flex items-center justify-between border border-white bg-black px-8 py-4 uppercase tracking-[0.2em] text-white transition-none hover:bg-white hover:text-black w-full md:w-auto"
-    >
-      <span className="font-bold text-sm tracking-widest">{label}</span>
-      <span className="ml-8 border-l border-white/40 pl-4 text-sm font-mono group-hover:border-black/40">
-        {price}
-      </span>
-      <span className="absolute right-3 opacity-0 group-hover:opacity-100 group-hover:animate-pulse font-mono font-bold text-black">
-        _
-      </span>
-    </a>
+    <div className="relative inline-flex">
+      <span className="absolute inset-0 animate-ping bg-[#ff6b35] opacity-20 rounded-none" />
+      <Link
+        to="/checkout"
+        className="relative group inline-flex items-center justify-between border-2 border-[#ff6b35] bg-[#ff6b35] px-8 py-4 uppercase tracking-[0.2em] text-black font-bold transition-none hover:bg-black hover:text-[#ff6b35] w-full md:w-auto"
+      >
+        <span className="font-bold text-sm tracking-widest">{label}</span>
+        <span className="ml-8 border-l border-black/40 pl-4 text-sm font-mono group-hover:border-[#ff6b35]/40">
+          {price}
+        </span>
+      </Link>
+    </div>
   );
 };
 
@@ -122,7 +123,7 @@ export default function App() {
       
       {/* Top Banner */}
       <div className="w-full border-b border-white/20 bg-black text-center py-3 px-4 uppercase tracking-[0.2em] text-xs font-mono text-white/60">
-        MAY 2026 // LOCAL + FREE CLOUD HYBRID DEPLOYMENT
+        LOCAL + CLOUD HYBRID // APPLE SILICON + FREE COLAB // NO SUBSCRIPTIONS
       </div>
 
       <main className="w-full max-w-4xl mx-auto px-4 sm:px-6 flex flex-col min-h-screen">
@@ -148,22 +149,37 @@ export default function App() {
           <motion.div variants={FADE_UP} className="w-full h-[1px] bg-white/20 mb-8" />
           
           <motion.p variants={FADE_UP} className="text-lg md:text-xl text-white/70 max-w-3xl mb-12 font-medium leading-snug">
-            Master Draw Things on Apple Silicon for truly unlimited image and video generation. Run Flux.2, Z Image Turbo, Juggernaut Ragnarok / Z-Image, Fluxxxed Up fine-tunes, Pony Diffusion, Demon Core NSFW, Qwen Image, and Wan 2.2 video models locally. Master img2img + inpainting for precise undress edits and character consistency. No censorship. No limits. Your device, your rules.
+            A complete technical guide to running uncensored AI image and video generation locally on your Apple Silicon Mac — with free cloud overflow on Google Colab. No subscriptions. No filters. No one watching.
           </motion.p>
           
-          <motion.div variants={FADE_UP} className="w-full">
+          <motion.div variants={FADE_UP} className="w-full flex">
             <DeployButton label="INITIALIZE DEPLOYMENT" />
           </motion.div>
         </motion.section>
 
         {/* Problem Statement */}
-        <section className="py-20 md:py-24 border-b border-white/20">
+        <motion.section
+          className="py-20 md:py-24 border-b border-white/20"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-tight mb-4">The Rented Compute Trap Is Obsolete.</h2>
           <p className="text-white/60 font-mono text-sm leading-relaxed max-w-2xl">
             Monthly fees, token limits, heavy censorship, and privacy leaks from cloud platforms are no longer necessary. Stop paying for restricted, watered-down outputs.
           </p>
           
           <SystemErrors />
+        </motion.section>
+
+        {/* System Capabilities Slideshow */}
+        <section className="py-20 md:py-24 border-b border-white/20">
+          <div className="mb-8">
+            <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-tight mb-4">What You'll Deploy</h2>
+            <p className="text-white/60 font-mono text-sm">Live System Feed</p>
+          </div>
+          <ModelShowcase />
         </section>
 
         {/* Architecture Table */}
@@ -177,7 +193,13 @@ export default function App() {
         </section>
 
         {/* Curriculum List */}
-        <section className="py-20 md:py-24 border-b border-white/20">
+        <motion.section
+          className="py-20 md:py-24 border-b border-white/20"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
           <div className="mb-12">
             <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-tight mb-4">Core Curriculum</h2>
             <p className="text-white/60 font-mono text-sm leading-relaxed mb-6">Video + Technical Manual Breakdown</p>
@@ -198,7 +220,7 @@ export default function App() {
           
           <div className="w-full border-t border-white/20 font-mono text-sm">
             {CURRICULUM.map((item, index) => (
-              <div key={index} className="flex flex-col md:flex-row border-b border-white/20 p-6 hover:bg-[#111] transition-none">
+              <div key={index} className="flex flex-col md:flex-row border-b border-white/20 border-l-4 border-l-transparent hover:border-l-[#ff6b35] p-6 hover:bg-[#111] transition-none pl-5">
                 <div className="md:w-16 font-bold text-white/40 mb-2 md:mb-0">
                   {item.num}
                 </div>
@@ -211,7 +233,7 @@ export default function App() {
               </div>
             ))}
           </div>
-        </section>
+        </motion.section>
 
       </main>
 
@@ -225,22 +247,18 @@ export default function App() {
           <p className="text-lg text-white/60 font-mono mb-12 max-w-2xl">
             Own the models. Control the pipeline. Generate privately and infinitely.
           </p>
-          
-          <div className="w-full max-w-md mx-auto">
-            <a 
-              href="#" 
-              className="group flex items-center justify-between border border-white bg-white px-8 py-5 uppercase tracking-[0.2em] text-black transition-none hover:bg-black hover:text-white w-full"
+
+          <div className="relative inline-flex mb-4">
+            <span className="absolute inset-0 animate-ping bg-[#ff6b35] opacity-20 rounded-none" />
+            <Link
+              to="/checkout"
+              className="relative inline-flex items-center justify-between border-2 border-[#ff6b35] bg-[#ff6b35] px-10 py-5 uppercase tracking-[0.2em] text-black font-bold transition-none hover:bg-black hover:text-[#ff6b35] text-sm"
             >
-              <span className="font-bold text-sm tracking-widest">SECURE THE GUIDE</span>
-              <span className="ml-8 border-l border-black/40 pl-4 text-sm font-mono group-hover:border-white/40">
-                $15
-              </span>
-            </a>
+              <span className="font-bold tracking-widest">GET INSTANT ACCESS</span>
+              <span className="ml-8 border-l border-black/40 pl-4 font-mono hover:border-[#ff6b35]/40">$15</span>
+            </Link>
           </div>
-          
-          <p className="text-white/40 font-mono text-xs max-w-xl mx-auto uppercase tracking-wider leading-relaxed mt-12 mb-12">
-            Instant password access to members area after payment. All videos, PDF, links, and support included.
-          </p>
+          <p className="text-white/30 font-mono text-xs uppercase tracking-widest mb-16">One-time payment · Instant access</p>
           
           <div className="border border-white/20 p-4 text-xs font-mono text-white/50 text-left w-full max-w-2xl mx-auto bg-[#111]">
             <span className="text-white font-bold tracking-widest">WARNING // LEGAL & RESPONSIBLE USE NOTE:</span><br/>
