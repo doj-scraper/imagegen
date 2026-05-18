@@ -194,8 +194,12 @@ export default function SecurePayloadDelivery() {
                 CORE DOCUMENTATION
               </h2>
               <div className="flex flex-col gap-3 font-mono text-[13px]">
-                <a href="/downloads/OMNIBUS-FINAL-cece.pdf" className="text-[#b0b0b0] hover:text-[#ff6b35] border border-transparent hover:border-[#ff6b35]/30 p-2 -mx-2 transition-none flex justify-between">
-                  <span>DEPLOYMENT_PROTOCOL_OMNIBUS_2026.PDF</span> <span className="text-[#00FF00]">ONLINE</span>
+                <a href="/downloads/OMNIBUS-FINAL-cece.pdf" target="_blank" rel="noopener noreferrer" className="group text-[#ff6b35] border border-[#ff6b35]/40 hover:border-[#ff6b35] hover:bg-[#ff6b35]/10 p-2 -mx-2 transition-none flex justify-between items-center">
+                  <span className="flex items-center gap-2">
+                    <span className="text-[10px] opacity-60">↓</span>
+                    DEPLOYMENT_PROTOCOL_OMNIBUS_2026.PDF
+                  </span>
+                  <span className="text-[#00FF00] text-[10px]">ONLINE</span>
                 </a>
               </div>
             </div>
@@ -206,21 +210,21 @@ export default function SecurePayloadDelivery() {
                 EXTERNAL INFRASTRUCTURE LINKS
               </h2>
               <div className="flex flex-col gap-4 font-mono text-[11px] uppercase tracking-wider">
-                <a href="https://github.com/camenduru/comfyui-colab" target="_blank" rel="noopener noreferrer" className="group block border-l-2 border-[#444] hover:border-[#ff6b35] pl-3 transition-none">
-                  <div className="text-[#888] group-hover:text-white mb-1">BASE COMPUTE // COMFYUI COLAB KERNEL</div>
-                  <div className="text-[#444] group-hover:text-[#ff6b35] break-all">github.com/camenduru/comfyui-colab</div>
+                <a href="https://github.com/camenduru/comfyui-colab" target="_blank" rel="noopener noreferrer" className="group block border-l-2 border-[#ff6b35]/40 hover:border-[#ff6b35] pl-3 transition-none">
+                  <div className="text-white group-hover:text-[#ff6b35] mb-1">BASE COMPUTE // COMFYUI COLAB KERNEL</div>
+                  <div className="text-[#ff6b35]/50 group-hover:text-[#ff6b35] break-all">github.com/camenduru/comfyui-colab</div>
                 </a>
-                <a href="https://github.com/ltdrdata/ComfyUI-Manager" target="_blank" rel="noopener noreferrer" className="group block border-l-2 border-[#444] hover:border-[#ff6b35] pl-3 transition-none">
-                  <div className="text-[#888] group-hover:text-white mb-1">PACKAGE MANAGER // COMFYUI MANAGER</div>
-                  <div className="text-[#444] group-hover:text-[#ff6b35] break-all">github.com/ltdrdata/ComfyUI-Manager</div>
+                <a href="https://github.com/ltdrdata/ComfyUI-Manager" target="_blank" rel="noopener noreferrer" className="group block border-l-2 border-[#ff6b35]/40 hover:border-[#ff6b35] pl-3 transition-none">
+                  <div className="text-white group-hover:text-[#ff6b35] mb-1">PACKAGE MANAGER // COMFYUI MANAGER</div>
+                  <div className="text-[#ff6b35]/50 group-hover:text-[#ff6b35] break-all">github.com/ltdrdata/ComfyUI-Manager</div>
                 </a>
-                <a href="https://civitai.com/models/133005?modelVersionId=357609" target="_blank" rel="noopener noreferrer" className="group block border-l-2 border-[#444] hover:border-[#ff6b35] pl-3 transition-none">
-                  <div className="text-[#888] group-hover:text-white mb-1">THE PHOTOREALISM ENGINE // JUGGERNAUT RAGNAROK</div>
-                  <div className="text-[#444] group-hover:text-[#ff6b35] break-all">civitai.com/models/... [REDIRECT]</div>
+                <a href="https://civitai.com/models/133005?modelVersionId=357609" target="_blank" rel="noopener noreferrer" className="group block border-l-2 border-[#ff6b35]/40 hover:border-[#ff6b35] pl-3 transition-none">
+                  <div className="text-white group-hover:text-[#ff6b35] mb-1">THE PHOTOREALISM ENGINE // JUGGERNAUT RAGNAROK</div>
+                  <div className="text-[#ff6b35]/50 group-hover:text-[#ff6b35] break-all">civitai.com/models/... [REDIRECT]</div>
                 </a>
-                <a href="https://civitai.com/models/257749?modelVersionId=290640" target="_blank" rel="noopener noreferrer" className="group block border-l-2 border-[#444] hover:border-[#ff6b35] pl-3 transition-none">
-                  <div className="text-[#888] group-hover:text-white mb-1">THE STRUCTURAL ENGINE // PONY DIFFUSION V6 XL</div>
-                  <div className="text-[#444] group-hover:text-[#ff6b35] break-all">civitai.com/models/... [REDIRECT]</div>
+                <a href="https://civitai.com/models/257749?modelVersionId=290640" target="_blank" rel="noopener noreferrer" className="group block border-l-2 border-[#ff6b35]/40 hover:border-[#ff6b35] pl-3 transition-none">
+                  <div className="text-white group-hover:text-[#ff6b35] mb-1">THE STRUCTURAL ENGINE // PONY DIFFUSION V6 XL</div>
+                  <div className="text-[#ff6b35]/50 group-hover:text-[#ff6b35] break-all">civitai.com/models/... [REDIRECT]</div>
                 </a>
               </div>
             </div>
@@ -235,7 +239,7 @@ export default function SecurePayloadDelivery() {
               </p>
               <a
                 href="/payload/extensions"
-                className="block text-center border border-[#444] text-[#888] hover:border-[#ff6b35] hover:text-[#ff6b35] py-3 text-xs font-mono font-bold tracking-widest uppercase transition-none rounded-none"
+                className="block text-center border border-[#ff6b35]/50 text-[#ff6b35] hover:border-[#ff6b35] hover:bg-[#ff6b35]/10 py-3 text-xs font-mono font-bold tracking-widest uppercase transition-none rounded-none"
               >
                 [ ACCESS COMFYUI EXTENSION DIRECTORY ]
               </a>
