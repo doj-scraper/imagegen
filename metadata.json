@@ -1,0 +1,8 @@
+{
+  "name": "AI Generation Masterclass Landing Page",
+  "description": "A brutalist, high-converting landing page for a course on deploying local and cloud AI image generation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
