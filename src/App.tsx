@@ -139,7 +139,7 @@ export default function App() {
           <motion.div variants={FADE_UP} className="w-full h-[1px] bg-white/20 mb-8" />
           
           <motion.p variants={FADE_UP} className="text-lg md:text-xl text-white/70 max-w-3xl mb-12 font-medium leading-snug">
-            A complete technical guide to deploying uncensored AI image and video generation on iOS and macOS — with free unlimited cloud offload on Google Colab. No credit system. No daily usage limits. No subscriptions. No filters. No one watching.
+            A complete technical guide to deploying uncensored AI image and video generation on iOS and macOS — with free unlimited cloud compute on Google Colab. No credit system. No daily usage limits. No subscriptions. No filters. No one watching.
           </motion.p>
           
           <motion.div variants={FADE_UP} className="w-full flex">
