@@ -20,7 +20,7 @@ const STAGGER = {
 
 const DeployButton: React.FC<{ label?: string; price?: string }> = ({
   label = "INITIALIZE DEPLOYMENT",
-  price = "$15",
+  price = "$25",
 }) => {
   return (
     <div className="relative inline-flex">
@@ -67,21 +67,21 @@ const SystemErrors: React.FC = () => {
 
 const INFRA_DATA = [
   {
-    layer: "LOCAL DEPLOYMENT",
+    layer: "LOCAL DEPLOYMENT [OPTIONAL UNLIMITED CLOUD COMPUTE OFFLOAD]",
     target: "iOS & macOS",
     specs: "Run privately on-device with no subscriptions, no daily caps, and no credit meter."
   },
   {
-    layer: "GOOGLE COLAB (CLOUD)",
-    target: "Heavy Batches / Stress Testing",
-    specs: "Offload heavy jobs to free GPU sessions for larger queues and faster batch throughput."
+    layer: "CLOUD INFERENCE / OS AGNOSTIC [COLAB ONE CLICK SET UP]",
+    target: "NON IOS / MAC OS USERS / Heavy Batches",
+    specs: "free GPU sessions for larger queues and faster batch throughput."
   }
 ];
 
 const WHAT_YOU_GET = [
-  "Complete setup guide for iOS + macOS local deployment",
-  "Cloud workflow for free unlimited high-volume generation",
-  "Model stack support (LoRA, ControlNet, Img2Img, Flux, Qwen, and more)",
+  "Complete setup guide for iOS + macOS local deployment with optional cloud acceleration, no credit system, no monthly subscription",
+  "5 minute quick start. I have removed the technical barrier, you will be generating images in just a few minutes ",
+  "Model stack support (Z Image, Flux 1 and 2 all variants, HiDream E and I, Juggernaut XL Ragnarok, and hundreds more custom and official models)",
 ];
 
 const DeploymentBrief: React.FC = () => {
@@ -148,16 +148,63 @@ export default function App() {
           </motion.div>
           
           <motion.h1 variants={FADE_UP} className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tighter uppercase leading-[0.9] mb-8 text-white">
-            Free. Unlimited.<br />
+            Run Advanced AI<br />
             <span className="text-white/40">Image &amp; Video</span><br />
-            Generation.
+            Workflows Anywhere.
           </motion.h1>
           
           <motion.div variants={FADE_UP} className="w-full h-[1px] bg-white/20 mb-8" />
           
-          <motion.p variants={FADE_UP} className="text-lg md:text-xl text-white/70 max-w-3xl mb-12 font-medium leading-snug">
-            A complete technical guide to deploying uncensored AI image and video generation on iOS and macOS — with free unlimited cloud compute on Google Colab. No credit system. No daily usage limits. No subscriptions. No filters. No one watching.
+          <motion.p variants={FADE_UP} className="text-lg md:text-xl text-white/70 max-w-3xl mb-10 font-medium leading-snug">
+            Deploy advanced AI image and video generation workflows from Web Browser [cloud] , iPhone, iPad, and Mac — with local generation, optional cloud acceleration, preconfigured workflows, and a complete operational deployment system.
           </motion.p>
+
+          <motion.div
+            variants={FADE_UP}
+            className="border border-white/20 bg-[#0a0a0a] w-full max-w-3xl mb-12"
+          >
+            <div className="border-b border-white/20 px-4 py-3 font-mono text-xs uppercase tracking-[0.2em] text-white/50">
+              COMPLETE DEPLOYMENT SYSTEM INCLUDES
+            </div>
+
+            <div className="p-5 space-y-3 font-mono text-sm text-white/80">
+              <div className="flex gap-3">
+                <span className="text-[#ff6b35]">+</span>
+                <span>
+                  <strong className="text-white">5-minute quick start</strong> — generate your first images in just a few steps
+                </span>
+              </div>
+
+              <div className="flex gap-3">
+                <span className="text-[#ff6b35]">+</span>
+                <span>80-page operational deployment manual</span>
+              </div>
+
+              <div className="flex gap-3">
+                <span className="text-[#ff6b35]">+</span>
+                <span>One-click Google Colab cloud deployment</span>
+              </div>
+
+              <div className="flex gap-3">
+                <span className="text-[#ff6b35]">+</span>
+                <span>Preconfigured image + video workflows</span>
+              </div>
+
+              <div className="flex gap-3">
+                <span className="text-[#ff6b35]">+</span>
+                <span>Mobile-first optimization for iOS + macOS</span>
+              </div>
+
+              <div className="flex gap-3">
+                <span className="text-[#ff6b35]">+</span>
+                <span>Model + sampler routing guides</span>
+              </div>
+
+              <div className="pt-3 border-t border-white/10 text-[#ff6b35] uppercase tracking-widest text-xs">
+                100% Satisfaction Money-Back Guarantee
+              </div>
+            </div>
+          </motion.div>
           
           <motion.div variants={FADE_UP} className="w-full flex">
             <DeployButton label="INITIALIZE DEPLOYMENT" />
