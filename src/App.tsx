@@ -67,9 +67,9 @@ const SystemErrors: React.FC = () => {
 
 const INFRA_DATA = [
   {
-    layer: "DRAW THINGS (LOCAL)",
-    target: "iOS & macOS / Unlimited",
-    specs: "Full offline execution on iPhone, iPad, and Mac, direct Civitai integration, Flux.2 + Z Image Turbo + Wan video, advanced img2img/inpainting, LoRA training. No credit limits — generate as much as you want."
+    layer: "LOCAL DEPLOYMENT",
+    target: "iOS & macOS",
+    specs: "Run locally on iPhone, iPad, and Mac, then offload heavy generations to free unlimited cloud compute with no credit system, no daily usage limits, and no quantity caps. Deploy 200+ models with LoRA, ControlNet, Img2Img, Flux 1/2 variants, Z Image Base/Turbo, Qwen Image, and more."
   },
   {
     layer: "GOOGLE COLAB (CLOUD)",
@@ -107,16 +107,6 @@ const ArchitectureTable: React.FC = () => {
   );
 };
 
-const CURRICULUM = [
-  { num: "01", title: "ENVIRONMENT INITIALIZATION", desc: "Draw Things setup on iOS (iPhone/iPad) and macOS, model manager, memory optimization for all supported devices." },
-  { num: "02", title: "MODEL SELECTION & ROUTING", desc: "When and how to deploy Flux.2, Z Image Turbo, Juggernaut Z-Image / Ragnarok, Fluxxxed Up variants, Pony, Demon Core NSFW, and Qwen." },
-  { num: "03", title: "PROMPT ARCHITECTURE", desc: "Technical prompting, CFG scales, step counts, seeding, and negative prompts optimized for these models." },
-  { num: "04", title: "IMG2IMG & INPAINTING MASTERY", desc: "Load clothed references → precise clothing removal, body edits, pose/lighting control while preserving faces." },
-  { num: "05", title: "ADVANCED CONTROL", desc: "LoRA stacking, ControlNet, masking tricks, and custom fine-tunes." },
-  { num: "06", title: "IMAGE-TO-VIDEO WORKFLOWS", desc: "Wan 2.2 and compatible models for turning static images into short NSFW clips + chaining techniques." },
-  { num: "07", title: "HYBRID OPTIMIZATION & TROUBLESHOOTING", desc: "Switching to free Colab, UI quirks, crash fixes, batch processing, and maximizing throughput." }
-];
-
 export default function App() {
   return (
     <div className="min-h-screen bg-black text-white selection:bg-white selection:text-black font-sans leading-relaxed flex flex-col items-center">
@@ -149,7 +139,7 @@ export default function App() {
           <motion.div variants={FADE_UP} className="w-full h-[1px] bg-white/20 mb-8" />
           
           <motion.p variants={FADE_UP} className="text-lg md:text-xl text-white/70 max-w-3xl mb-12 font-medium leading-snug">
-            A complete technical guide to running uncensored AI image and video generation locally on iOS and macOS — with free unlimited cloud compute on Google Colab. No credits. No subscriptions. No filters. No one watching.
+            A complete technical guide to deploying uncensored AI image and video generation on iOS and macOS — with free unlimited cloud compute on Google Colab. No credit system. No daily usage limits. No subscriptions. No filters. No one watching.
           </motion.p>
           
           <motion.div variants={FADE_UP} className="w-full flex">
@@ -191,49 +181,6 @@ export default function App() {
           
           <ArchitectureTable />
         </section>
-
-        {/* Curriculum List */}
-        <motion.section
-          className="py-20 md:py-24 border-b border-white/20"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-tight mb-4">Core Curriculum</h2>
-            <p className="text-white/60 font-mono text-sm leading-relaxed mb-6">Video + Technical Manual Breakdown</p>
-            
-            <div className="border border-white/20 bg-[#111] p-4 inline-block">
-              <h4 className="font-bold uppercase tracking-widest text-xs mb-3 text-white border-b border-white/20 pb-2">
-                DELIVERABLES
-              </h4>
-              <ul className="space-y-2 font-mono text-xs text-white/60">
-                <li>[+] 5-7 clear screen-recorded videos (~50-70 mins)</li>
-                <li>[+] Detailed technical PDF manual</li>
-                <li>[+] Curated list of best-performing models/LoRAs</li>
-                <li>[+] Ready-to-run Colab notebook links</li>
-                <li>[+] Personal follow-up support</li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="w-full border-t border-white/20 font-mono text-sm">
-            {CURRICULUM.map((item, index) => (
-              <div key={index} className="flex flex-col md:flex-row border-b border-white/20 border-l-4 border-l-transparent hover:border-l-[#ff6b35] p-6 hover:bg-[#111] transition-none pl-5">
-                <div className="md:w-16 font-bold text-white/40 mb-2 md:mb-0">
-                  {item.num}
-                </div>
-                <div className="md:w-72 font-bold text-white uppercase tracking-wider pr-4 mb-2 md:mb-0">
-                  {item.title}
-                </div>
-                <div className="flex-1 text-white/70 leading-relaxed">
-                  {item.desc}
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.section>
 
       </main>
 
