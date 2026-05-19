@@ -130,7 +130,7 @@ export default function App() {
       
       {/* Top Banner */}
       <div className="w-full border-b border-white/20 bg-black text-center py-3 px-4 uppercase tracking-[0.2em] text-xs font-mono text-white/60">
-        UNLIMITED FREE IMAGE &amp; VIDEO GENERATION // iOS + macOS LOCAL DEPLOY // FREE UNLIMITED CLOUD COMPUTE
+        UNLIMITED IMAGE/VIDEO GENERATION · LOCAL iOS/macOS DEPLOYMENT · ZERO-COST CLOUD COMPUTE LAYER
       </div>
 
       <main className="w-full max-w-4xl mx-auto px-4 sm:px-6 flex flex-col min-h-screen">
