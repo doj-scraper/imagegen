@@ -38,33 +38,6 @@ const DeployButton: React.FC<{ label?: string; price?: string }> = ({
   );
 };
 
-const ERROR_LOGS = [
-  { id: "ERR_01", title: "CENSORSHIP PROTOCOLS", desc: "Arbitrary prompt filtering and hardcoded restrictions bottleneck output." },
-  { id: "ERR_02", title: "TOKEN DRAIN", desc: "Slow queues and daily credit caps punish experimentation and refinement." },
-  { id: "ERR_03", title: "INCONSISTENT OUTPUTS", desc: "Unpredictable results from generic SaaS wrappers built for mass appeal." },
-  { id: "ERR_04", title: "PRIVACY LEAK", desc: "Loss of control over generations and concepts on remote corporate servers." },
-];
-
-const SystemErrors: React.FC = () => {
-  return (
-    <div className="w-full border-t border-b border-white/20 font-mono text-sm mt-8">
-      {ERROR_LOGS.map((log) => (
-        <div key={log.id} className="flex flex-col md:flex-row border-b border-white/20 last:border-0 hover:bg-[#111] transition-none p-4">
-          <div className="md:w-32 text-white/50 mb-2 md:mb-0">
-            [{log.id}]
-          </div>
-          <div className="md:w-64 font-bold text-white uppercase tracking-wider mb-2 md:mb-0">
-            {log.title}
-          </div>
-          <div className="flex-1 text-white/80">
-            {log.desc}
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-};
-
 const INFRA_DATA = [
   {
     layer: "LOCAL DEPLOYMENT [OPTIONAL UNLIMITED CLOUD COMPUTE OFFLOAD]",
@@ -82,6 +55,11 @@ const WHAT_YOU_GET = [
   "Complete setup guide for iOS + macOS local deployment with optional cloud acceleration, no credit system, no monthly subscription",
   "5 minute quick start. I have removed the technical barrier, you will be generating images in just a few minutes ",
   "Model stack support (Z Image, Flux 1 and 2 all variants, HiDream E and I, Juggernaut XL Ragnarok, and hundreds more custom and official models)",
+  "80-page operational deployment manual",
+  "One-click Google Colab cloud deployment",
+  "Preconfigured image + video workflows",
+  "Mobile-first optimization for iOS + macOS",
+  "Model + sampler routing guides"
 ];
 
 const DeploymentBrief: React.FC = () => {
@@ -119,6 +97,9 @@ const DeploymentBrief: React.FC = () => {
             </li>
           ))}
         </ul>
+        <div className="pt-3 mt-3 border-t border-white/10 text-[#ff6b35] uppercase tracking-widest text-xs font-mono">
+          100% Satisfaction Money-Back Guarantee
+        </div>
       </div>
     </div>
   );
@@ -158,80 +139,17 @@ export default function App() {
           <motion.p variants={FADE_UP} className="text-lg md:text-xl text-white/70 max-w-3xl mb-10 font-medium leading-snug">
             Deploy advanced AI image and video generation workflows from Web Browser [cloud] , iPhone, iPad, and Mac — with local generation, optional cloud acceleration, preconfigured workflows, and a complete operational deployment system.
           </motion.p>
-
-          <motion.div
-            variants={FADE_UP}
-            className="border border-white/20 bg-[#0a0a0a] w-full max-w-3xl mb-12"
-          >
-            <div className="border-b border-white/20 px-4 py-3 font-mono text-xs uppercase tracking-[0.2em] text-white/50">
-              COMPLETE DEPLOYMENT SYSTEM INCLUDES
-            </div>
-
-            <div className="p-5 space-y-3 font-mono text-sm text-white/80">
-              <div className="flex gap-3">
-                <span className="text-[#ff6b35]">+</span>
-                <span>
-                  <strong className="text-white">5-minute quick start</strong> — generate your first images in just a few steps
-                </span>
-              </div>
-
-              <div className="flex gap-3">
-                <span className="text-[#ff6b35]">+</span>
-                <span>80-page operational deployment manual</span>
-              </div>
-
-              <div className="flex gap-3">
-                <span className="text-[#ff6b35]">+</span>
-                <span>One-click Google Colab cloud deployment</span>
-              </div>
-
-              <div className="flex gap-3">
-                <span className="text-[#ff6b35]">+</span>
-                <span>Preconfigured image + video workflows</span>
-              </div>
-
-              <div className="flex gap-3">
-                <span className="text-[#ff6b35]">+</span>
-                <span>Mobile-first optimization for iOS + macOS</span>
-              </div>
-
-              <div className="flex gap-3">
-                <span className="text-[#ff6b35]">+</span>
-                <span>Model + sampler routing guides</span>
-              </div>
-
-              <div className="pt-3 border-t border-white/10 text-[#ff6b35] uppercase tracking-widest text-xs">
-                100% Satisfaction Money-Back Guarantee
-              </div>
-            </div>
-          </motion.div>
           
           <motion.div variants={FADE_UP} className="w-full flex">
             <DeployButton label="INITIALIZE DEPLOYMENT" />
           </motion.div>
         </motion.section>
 
-        {/* Problem Statement */}
-        <motion.section
-          className="py-20 md:py-24 border-b border-white/20"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-tight mb-4">The Credit-Based Compute Trap Is Over.</h2>
-          <p className="text-white/60 font-mono text-sm leading-relaxed max-w-2xl">
-            Monthly fees, token limits, heavy censorship, and privacy leaks from cloud platforms are no longer necessary. Generate unlimited images and videos — free, locally on iOS and macOS, and free on the cloud.
-          </p>
-          
-          <SystemErrors />
-        </motion.section>
-
-        {/* Combined Architecture + Deliverables */}
+        {/* Combined Architecture + Deliverables (Deployment Snapshot) */}
         <section className="py-20 md:py-24 border-b border-white/20">
           <div>
             <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-tight mb-4">Deployment Snapshot</h2>
-            <p className="text-white/60 font-mono text-sm">Architecture + Deliverables</p>
+            <p className="text-white/60 font-mono text-sm">Architecture + Complete Deployment System</p>
           </div>
 
           <DeploymentBrief />
