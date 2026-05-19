@@ -69,22 +69,28 @@ const INFRA_DATA = [
   {
     layer: "LOCAL DEPLOYMENT",
     target: "iOS & macOS",
-    specs: "Run locally on iPhone, iPad, and Mac, then offload heavy generations to free unlimited cloud compute with no credit system, no daily usage limits, and no quantity caps. Deploy 200+ models with LoRA, ControlNet, Img2Img, Flux 1/2 variants, Z Image Base/Turbo, Qwen Image, and more."
+    specs: "Run privately on-device with no subscriptions, no daily caps, and no credit meter."
   },
   {
     layer: "GOOGLE COLAB (CLOUD)",
     target: "Heavy Batches / Stress Testing",
-    specs: "Free high-tier GPU allocation (T4/V100), ComfyUI asynchronous workflows, scaled Flux.2 runs. No credit system — unlimited compute at zero cost."
+    specs: "Offload heavy jobs to free GPU sessions for larger queues and faster batch throughput."
   }
 ];
 
-const ArchitectureTable: React.FC = () => {
+const WHAT_YOU_GET = [
+  "Complete setup guide for iOS + macOS local deployment",
+  "Cloud workflow for free unlimited high-volume generation",
+  "Model stack support (LoRA, ControlNet, Img2Img, Flux, Qwen, and more)",
+];
+
+const DeploymentBrief: React.FC = () => {
   return (
     <div className="w-full border border-white mt-8">
       <div className="grid grid-cols-1 md:grid-cols-12 border-b border-white bg-white text-black font-bold uppercase text-xs tracking-widest p-3">
         <div className="md:col-span-3">INFRASTRUCTURE</div>
         <div className="md:col-span-3 mt-2 md:mt-0">DEPLOYMENT TARGET</div>
-        <div className="md:col-span-6 mt-2 md:mt-0">CAPABILITIES UNLOCKED</div>
+        <div className="md:col-span-6 mt-2 md:mt-0">WHAT YOU GET</div>
       </div>
       
       {INFRA_DATA.map((row, idx) => (
@@ -103,6 +109,17 @@ const ArchitectureTable: React.FC = () => {
           </div>
         </div>
       ))}
+
+      <div className="border-t border-white/20 p-4 md:p-5">
+        <ul className="space-y-2 text-white/80 font-mono text-xs md:text-sm">
+          {WHAT_YOU_GET.map((item) => (
+            <li key={item} className="flex gap-2">
+              <span className="text-[#ff6b35]">+</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
@@ -163,23 +180,23 @@ export default function App() {
           <SystemErrors />
         </motion.section>
 
+        {/* Combined Architecture + Deliverables */}
+        <section className="py-20 md:py-24 border-b border-white/20">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-tight mb-4">Deployment Snapshot</h2>
+            <p className="text-white/60 font-mono text-sm">Architecture + Deliverables</p>
+          </div>
+
+          <DeploymentBrief />
+        </section>
+
         {/* System Capabilities Slideshow */}
         <section className="py-20 md:py-24 border-b border-white/20">
           <div className="mb-8">
-            <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-tight mb-4">What You'll Deploy</h2>
+            <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-tight mb-4">Live System Preview</h2>
             <p className="text-white/60 font-mono text-sm">Live System Feed</p>
           </div>
           <ModelShowcase />
-        </section>
-
-        {/* Architecture Table */}
-        <section className="py-20 md:py-24 border-b border-white/20">
-          <div>
-            <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-tight mb-4">The Architecture</h2>
-            <p className="text-white/60 font-mono text-sm">Deployment Options</p>
-          </div>
-          
-          <ArchitectureTable />
         </section>
 
       </main>
@@ -205,7 +222,10 @@ export default function App() {
               <span className="ml-8 border-l border-black/40 pl-4 font-mono hover:border-[#ff6b35]/40">$15</span>
             </Link>
           </div>
-          <p className="text-white/30 font-mono text-xs uppercase tracking-widest mb-16">One-time payment · Instant access</p>
+          <p className="text-white/30 font-mono text-xs uppercase tracking-widest">One-time payment · Instant access</p>
+          <p className="text-[#ff6b35] font-mono text-xs uppercase tracking-widest mb-16 mt-3">
+            100% money-back guarantee
+          </p>
           
           <div className="border border-white/20 p-4 text-xs font-mono text-white/50 text-left w-full max-w-2xl mx-auto bg-[#111]">
             <span className="text-white font-bold tracking-widest">WARNING // LEGAL & RESPONSIBLE USE NOTE:</span><br/>
