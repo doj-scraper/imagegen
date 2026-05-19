@@ -68,13 +68,13 @@ const SystemErrors: React.FC = () => {
 const INFRA_DATA = [
   {
     layer: "DRAW THINGS (LOCAL)",
-    target: "Everyday / Unlimited",
-    specs: "Full offline execution on M-series chips, direct Civitai integration, Flux.2 + Z Image Turbo + Wan video, advanced img2img/inpainting, LoRA training."
+    target: "iOS & macOS / Unlimited",
+    specs: "Full offline execution on iPhone, iPad, and Mac, direct Civitai integration, Flux.2 + Z Image Turbo + Wan video, advanced img2img/inpainting, LoRA training. No credit limits — generate as much as you want."
   },
   {
     layer: "GOOGLE COLAB (CLOUD)",
     target: "Heavy Batches / Stress Testing",
-    specs: "Free high-tier GPU allocation (T4/V100), ComfyUI asynchronous workflows, scaled Flux.2 runs."
+    specs: "Free high-tier GPU allocation (T4/V100), ComfyUI asynchronous workflows, scaled Flux.2 runs. No credit system — unlimited compute at zero cost."
   }
 ];
 
@@ -108,7 +108,7 @@ const ArchitectureTable: React.FC = () => {
 };
 
 const CURRICULUM = [
-  { num: "01", title: "ENVIRONMENT INITIALIZATION", desc: "Draw Things setup, model manager, memory optimization for M1–M4 chips." },
+  { num: "01", title: "ENVIRONMENT INITIALIZATION", desc: "Draw Things setup on iOS (iPhone/iPad) and macOS, model manager, memory optimization for all supported devices." },
   { num: "02", title: "MODEL SELECTION & ROUTING", desc: "When and how to deploy Flux.2, Z Image Turbo, Juggernaut Z-Image / Ragnarok, Fluxxxed Up variants, Pony, Demon Core NSFW, and Qwen." },
   { num: "03", title: "PROMPT ARCHITECTURE", desc: "Technical prompting, CFG scales, step counts, seeding, and negative prompts optimized for these models." },
   { num: "04", title: "IMG2IMG & INPAINTING MASTERY", desc: "Load clothed references → precise clothing removal, body edits, pose/lighting control while preserving faces." },
@@ -123,7 +123,7 @@ export default function App() {
       
       {/* Top Banner */}
       <div className="w-full border-b border-white/20 bg-black text-center py-3 px-4 uppercase tracking-[0.2em] text-xs font-mono text-white/60">
-        LOCAL + CLOUD HYBRID // APPLE SILICON + FREE COLAB // NO SUBSCRIPTIONS
+        UNLIMITED FREE IMAGE &amp; VIDEO GENERATION // iOS + macOS LOCAL DEPLOY // FREE UNLIMITED CLOUD COMPUTE
       </div>
 
       <main className="w-full max-w-4xl mx-auto px-4 sm:px-6 flex flex-col min-h-screen">
@@ -141,15 +141,15 @@ export default function App() {
           </motion.div>
           
           <motion.h1 variants={FADE_UP} className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tighter uppercase leading-[0.9] mb-8 text-white">
-            Zero Subscriptions.<br />
-            <span className="text-white/40">Unlimited Local</span><br />
-            NSFW Generation.
+            Free. Unlimited.<br />
+            <span className="text-white/40">Image &amp; Video</span><br />
+            Generation.
           </motion.h1>
           
           <motion.div variants={FADE_UP} className="w-full h-[1px] bg-white/20 mb-8" />
           
           <motion.p variants={FADE_UP} className="text-lg md:text-xl text-white/70 max-w-3xl mb-12 font-medium leading-snug">
-            A complete technical guide to running uncensored AI image and video generation locally on your Apple Silicon Mac — with free cloud overflow on Google Colab. No subscriptions. No filters. No one watching.
+            A complete technical guide to running uncensored AI image and video generation locally on iOS and macOS — with free unlimited cloud compute on Google Colab. No credits. No subscriptions. No filters. No one watching.
           </motion.p>
           
           <motion.div variants={FADE_UP} className="w-full flex">
@@ -165,9 +165,9 @@ export default function App() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-tight mb-4">The Rented Compute Trap Is Obsolete.</h2>
+          <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-tight mb-4">The Credit-Based Compute Trap Is Over.</h2>
           <p className="text-white/60 font-mono text-sm leading-relaxed max-w-2xl">
-            Monthly fees, token limits, heavy censorship, and privacy leaks from cloud platforms are no longer necessary. Stop paying for restricted, watered-down outputs.
+            Monthly fees, token limits, heavy censorship, and privacy leaks from cloud platforms are no longer necessary. Generate unlimited images and videos — free, locally on iOS and macOS, and free on the cloud.
           </p>
           
           <SystemErrors />
@@ -242,10 +242,10 @@ export default function App() {
         <div className="max-w-4xl mx-auto text-center w-full flex flex-col items-center">
           <Terminal size={32} className="text-white/40 mb-8" />
           <h2 className="text-4xl md:text-5xl font-extrabold uppercase tracking-tighter mb-6 text-white leading-none">
-            Stop Paying<br/>For Pixels.
+            Free. Unlimited.<br/>Generate Forever.
           </h2>
           <p className="text-lg text-white/60 font-mono mb-12 max-w-2xl">
-            Own the models. Control the pipeline. Generate privately and infinitely.
+            Deploy locally on iOS and macOS. Scale free on the cloud. No credits. No limits. Generate as much as you want.
           </p>
 
           <div className="relative inline-flex mb-4">
