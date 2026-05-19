@@ -66,9 +66,9 @@ export default function ModelShowcase() {
                 src={src}
                 alt={`Sample output ${idx + 1}`}
                 className="w-full h-full object-cover"
-                loading={idx === activeIndex && activeIndex === 0 ? 'eager' : 'lazy'}
+                loading={idx === activeIndex ? 'eager' : 'lazy'}
                 decoding="async"
-                fetchPriority={idx === activeIndex && activeIndex === 0 ? 'high' : 'low'}
+                fetchPriority={idx === activeIndex ? 'high' : 'low'}
                 sizes="(max-width: 768px) 100vw, 896px"
                 width={896}
                 height={580}
@@ -114,4 +114,3 @@ export default function ModelShowcase() {
     </div>
   );
 }
-
