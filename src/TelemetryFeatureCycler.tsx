@@ -34,6 +34,8 @@ const IMAGES = [
 export default function ModelShowcase() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const previousIndex = (activeIndex - 1 + IMAGES.length) % IMAGES.length;
+  const nextIndex = (activeIndex + 1) % IMAGES.length;
 
   useEffect(() => {
     if (isPaused) return;
@@ -59,7 +61,19 @@ export default function ModelShowcase() {
             key={idx}
             className={`absolute inset-0 transition-opacity duration-700 ${idx === activeIndex ? 'opacity-100' : 'opacity-0'}`}
           >
-            <img src={src} alt={`Sample output ${idx + 1}`} className="w-full h-full object-cover" />
+            {(idx === activeIndex || idx === previousIndex || idx === nextIndex) && (
+              <img
+                src={src}
+                alt={`Sample output ${idx + 1}`}
+                className="w-full h-full object-cover"
+                loading={idx === activeIndex ? 'eager' : 'lazy'}
+                decoding="async"
+                fetchPriority={idx === activeIndex ? 'high' : 'low'}
+                sizes="(max-width: 768px) 100vw, 896px"
+                width={896}
+                height={580}
+              />
+            )}
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
           </div>
         ))}
@@ -100,5 +114,3 @@ export default function ModelShowcase() {
     </div>
   );
 }
-
-
